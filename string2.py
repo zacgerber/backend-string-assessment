@@ -43,8 +43,15 @@ def verbing(s):
 
 
 def not_bad(s):
-    s.replace('not', '').replace('bad', '')
-    return s
+    snot = s.find('not')
+    sbad = s.find('bad')
+
+    if sbad > snot and snot >0 and sbad>0:
+        s = s.replace(s[snot:(sbad +5)], 'good')
+        return s
+    else:
+        return s
+
 
 
 # F. front_back
