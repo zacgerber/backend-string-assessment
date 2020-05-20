@@ -23,8 +23,14 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    length = len(s)
+
+    if length >= 3:
+        if s[-3:] == 'ing':
+            s += 'ly'
+        else:
+            s += 'ing'
+    return s
 
 
 # E. not_bad
@@ -37,8 +43,8 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+    s.replace('not', '').replace('bad', '')
+    return s
 
 
 # F. front_back
