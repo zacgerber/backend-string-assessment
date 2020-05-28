@@ -46,11 +46,10 @@ def not_bad(s):
     snot = s.find('not')
     sbad = s.find('bad')
 
-    if sbad > snot and snot >0 and sbad>0:
-        s = s.replace(s[snot:(sbad +5)], 'good')
-        return s
-    else:
-        return s
+    if sbad > snot:
+        s = s.replace(s[snot:(sbad +3)], 'good')
+        
+    return s
 
 
 
@@ -65,8 +64,27 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    alength = len(a)
+    blength = len(b)
+
+    if alength % 2==0:
+        aindex = alength // 2
+    else: 
+        aindex = (alength // 2) + 1
+
+    if blength % 2 == 0:
+        bindex = blength // 2
+    else:
+        bindex = (blength // 2) + 1
+
+    afront = a[0:aindex]
+    aback = a[aindex:]
+
+    bfront = b[0:bindex]
+    bback = b[bindex:]
+
+
+    return afront + bfront +aback +bback
 
 
 # Provided simple test() function used in main() to print
